@@ -1,0 +1,15 @@
+.shadow img {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
+}
+
+.hidden {
+    display: none;
+}
+
+.single blockquote {
+    display: block;
+    border-left: 0.3rem solid #6bd6fd;
+    background-color: rgba(107, 214, 253, 0.2);
+    padding: .25rem .75rem;
+    margin: 1rem 0
+}
