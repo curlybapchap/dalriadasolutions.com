@@ -1560,3 +1560,22 @@
         gap: 0px
       }
     }
+
+/* Mobile: let the contact form shrink to the screen width (inputs' default size was forcing ~444px layout) */
+@media (max-width: 767px) {
+  #contact form,
+  #contact fieldset {
+    width: 100%;
+    min-width: 0;
+  }
+  #contact input,
+  #contact textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  #contact button[type="submit"] {
+    width: 100%;
+    white-space: normal;
+  }
+}
