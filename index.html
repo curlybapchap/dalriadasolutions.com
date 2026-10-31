@@ -29,6 +29,7 @@
   <link rel="preload" href="./fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./styles.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="b6460577-e1c2-4bff-b83f-c6b51d64a049"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -134,7 +135,7 @@
               <li>No recruitment process or agency fees</li>
             </ul>
             <p><a href="https://buy.stripe.com/28EaEZ6LrbVCcWg4Dgfw401" target="_blank" rel="noopener noreferrer"
-                class="btn">Subscribe now</a></p>
+                class="btn" data-umami-event="Subscribe Click">Subscribe now</a></p>
             <p class="slot-note">Limited to 2 subscription clients at a time.</p>
             <p class="fine">Not sure yet? <a href="#contact">Talk it through first.</a></p>
           </div>
@@ -370,7 +371,7 @@
           Microsoft-stack (.NET / SQL Server) codebases only. Read-only access, removed afterwards. This is a
           documentation and code-quality review, not a security audit.
         </p>
-        <p><a href="#contact" class="btn">Request a health check</a></p>
+        <p><a href="#contact" class="btn" data-umami-event="Health Check Click">Request a health check</a></p>
       </div>
     </section>
 
@@ -543,7 +544,7 @@
             </div>
             <p class="fine" style="color: var(--on-dark); margin: 0;">I'll only use your details to reply to your
               enquiry. See the <a href="./privacy.html">privacy policy</a>.</p>
-            <div><button type="submit" class="btn">Send your details</button></div>
+            <div><button type="submit" class="btn" data-umami-event="Contact Form Submit">Send your details</button></div>
           </form>
         </div>
       </div>
@@ -565,6 +566,22 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Analytics: record once when the pricing and contact sections scroll into view.
+    if ('IntersectionObserver' in window) {
+      var seen = { pricing: 'Pricing Viewed', contact: 'Contact Form Viewed' };
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && seen[e.target.id]) {
+            if (window.umami) window.umami.track(seen[e.target.id]);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      Object.keys(seen).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    }
+  </script>
 </body>
 
 </html>
