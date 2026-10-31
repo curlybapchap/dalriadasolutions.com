@@ -271,6 +271,15 @@ textarea { resize: vertical; min-height: 9rem; }
 .site-footer p { margin: 0 0 0.3rem; }
 .site-footer a { color: var(--gold-light); }
 
+/* ---------- Legal pages ---------- */
+.legal h2 { font-size: 1.5rem; margin-top: 2.25rem; }
+.legal h2:first-of-type { margin-top: 0; }
+.legal ul { padding-left: 1.2rem; }
+.legal li { margin-bottom: 0.4rem; }
+.legal table { border-collapse: collapse; width: 100%; max-width: var(--measure); margin: 0 0 1.1em; font-size: 0.97rem; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem 0.6rem 0; border-top: 1px solid var(--rule); }
+.legal tr:last-child th, .legal tr:last-child td { border-bottom: 1px solid var(--rule); }
+
 /* ---------- Illustrations ---------- */
 .ill { width: 9rem; height: auto; color: var(--basalt); margin-bottom: 1rem; }
 .ill .gold { stroke: var(--gold); }
