@@ -196,7 +196,6 @@ a:hover { color: var(--basalt); }
   transform: rotate(-45deg);
 }
 
-.slot-note { font-weight: 600; margin: 1rem 0 0; }
 
 .guarantee { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--loch); padding: 1.75rem; border-radius: 4px; align-self: start; }
 .guarantee h3 { font-size: 1.5rem; }
